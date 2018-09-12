@@ -1,0 +1,49 @@
+@model portfolio.Models.Visitor
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">  
+        <meta charset='utf-8'>
+        <meta name="viewport" content="width=device-width,initial-scale=1">  
+        <link rel="stylesheet" href="~/css/style.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <title>Contact</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">  
+            <div class="container-fluid">  
+                <div class="navbar-header">  
+                    <a class="navbar-brand" href="/projects/">Devin Ercolano</a>  
+                </div>  
+                <ul class="nav navbar-nav">  
+                    <li><a href="/projects/">Projects</a></li>  
+                    <li class="active"><a href="/contact/">Contact</a></li>  
+                </ul>  
+            </div>
+        </nav>
+        <div class="wrapper">
+            <div class="contactContainer">
+                <form asp-controller="Contact" asp-action="Submit" method="post" id="contact_form">
+                    <h1>Contact Me</h1>
+                    <label asp-for="name"></label>
+                    <input asp-for="name" />
+                    <span asp-validation-for="name"></span>
+                    <label asp-for="email"></label>
+                    <input asp-for="email" />
+                    <span asp-validation-for="email"></span>
+
+                    <label asp-for="messageText"></label>
+                    <textarea asp-for="messageText"></textarea>
+                    <span asp-validation-for="messageText"></span>
+
+                    <input type="submit" value="Send" />
+                </form>
+            </div>
+            <div class="link_container">
+                <a href="https://github.com/devinercolano"><img src="~/img/github_logo.png"/></a>
+                <a href="https://www.linkedin.com/in/devin-ercolano"><img src="~/img/linkedin_logo.png"/></a>
+            </div>
+        </div>
+    </body>
+</html>
